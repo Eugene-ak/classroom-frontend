@@ -1,35 +1,4 @@
-import type { Subject } from "@/types";
 import { GraduationCap, School } from "lucide-react";
-
-export const MOCK_SUBJECTS: Subject[] = [
-  {
-    id: 1,
-    name: "Introduction to Algorithms",
-    code: "CS201",
-    department: "Computer Science",
-    description:
-      "Covers fundamental algorithmic techniques including sorting, searching, graph algorithms, and complexity analysis.",
-    createdAt: "2025-09-01T08:00:00.000Z",
-  },
-  {
-    id: 2,
-    name: "Calculus II",
-    code: "MATH202",
-    department: "Mathematics",
-    description:
-      "A continuation of Calculus I exploring integral calculus, techniques of integration, sequences, and series.",
-    createdAt: "2025-09-01T08:00:00.000Z",
-  },
-  {
-    id: 3,
-    name: "Classical Mechanics",
-    code: "PHY301",
-    department: "Physics",
-    description:
-      "Examines Newtonian mechanics, Lagrangian and Hamiltonian formulations, rigid body dynamics, and oscillatory systems.",
-    createdAt: "2025-09-01T08:00:00.000Z",
-  },
-];
 
 export const USER_ROLES = {
   STUDENT: "student",
@@ -98,9 +67,9 @@ const getEnvVar = (key: string): string => {
 // export const CLOUDINARY_CLOUD_NAME = getEnvVar("VITE_CLOUDINARY_CLOUD_NAME");
 export const BACKEND_BASE_URL = getEnvVar("VITE_BACKEND_BASE_URL");
 
-export const BASE_URL = import.meta.env.VITE_API_URL;
-export const ACCESS_TOKEN_KEY = import.meta.env.VITE_ACCESS_TOKEN_KEY;
-export const REFRESH_TOKEN_KEY = import.meta.env.VITE_REFRESH_TOKEN_KEY;
+export const BASE_URL = getEnvVar("VITE_API_URL");
+export const ACCESS_TOKEN_KEY = getEnvVar("VITE_ACCESS_TOKEN_KEY");
+export const REFRESH_TOKEN_KEY = getEnvVar("VITE_REFRESH_TOKEN_KEY");
 
 export const REFRESH_TOKEN_URL = `${BASE_URL}/refresh-token`;
 
